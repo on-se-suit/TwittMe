@@ -40,4 +40,14 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+
+  ###########
+  #ce que j'ai ajouté
+  map.resource :user_session
+  map.root :controller => "user_sessions", :action => "new" # optional, this just sets the root route
+ ###########
+  map.resource :account, :controller => "users"
+  map.resources :users 
+ ###########
+
 end
